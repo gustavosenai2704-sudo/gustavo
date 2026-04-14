@@ -1,47 +1,32 @@
-<div>
-    <!DOCTYPE html>
-    <html lang="PT-BR">
+<x-app-layout>
+    <x-slot name="header">
+        <p class="oficina-subtitle">Central da Oficina</p>
+        <h2 class="oficina-title">Gestao de Servicos</h2>
+    </x-slot>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro de Carros</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <div class="container mt-5">
-        <h2>Cadastrar Carro</h2>
+    <div class="oficina-shell">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="oficina-panel p-4 h-100">
+                        <span class="oficina-badge mb-3">Bem-vindo</span>
+                        <h3 class="oficina-section-title mb-3">Ary Auto Center</h3>
+                        <p class="oficina-text mb-0">Use este painel para cadastrar, consultar, alterar e excluir os servicos realizados na oficina.</p>
+                    </div>
+                </div>
 
-        <form action="" method="POST">
-            @csrf
-
-            <div class="mb-3">
-                <label for="marca" class="form-label">Marca</label>
-                <input type="text" name="marca" id="marca" class="form-control" required>
+                <div class="col-lg-8">
+                    <div class="oficina-panel p-4 p-lg-5 h-100">
+                        <h3 class="oficina-section-title mb-4">Acesso rapido</h3>
+                        <div class="d-flex flex-wrap gap-3 oficina-page-actions">
+                            <a href="{{ route('carros.salvar.form') }}" class="btn oficina-btn-primary">Cadastrar servico</a>
+                            <a href="{{ route('carros.lista') }}" class="btn oficina-btn-dark">Historico</a>
+                            <a href="{{ route('carros.alterar.form') }}" class="btn oficina-btn-dark">Alterar</a>
+                            <a href="{{ route('carros.deletar.form') }}" class="btn oficina-btn-danger">Deletar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="mb-3">
-                <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" name="modelo" id="modelo" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="ano" class="form-label">Ano</label>
-                <input type="number" name="ano" id="ano" class="form-control">
-            </div>
-
-            <div class="mb-3">
-                <label for="cor" class="form-label">Cor</label>
-                <input type="text" name="cor" id="cor" class="form-control">
-            </div>
-
-            <div class="mb-3">
-                <label for="preco" class="form-label">Preço</label>
-                <input type="number" step="0.01" name="preco" id="preco" class="form-control">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Salvar</button>
-        </form>
+        </div>
     </div>
-
-
-</div>
+</x-app-layout>
