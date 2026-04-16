@@ -18,12 +18,7 @@
                 <div class="col-lg-8">
                     <div class="oficina-panel p-4 p-lg-5 h-100">
                         <h3 class="oficina-section-title mb-4">Acesso rapido</h3>
-                        <div class="d-flex flex-wrap gap-3 oficina-page-actions">
-                            <a href="{{ route('carros.salvar.form') }}" class="btn oficina-btn-primary">Cadastrar servico</a>
-                            <a href="{{ route('carros.lista') }}" class="btn oficina-btn-dark">Historico</a>
-                            <a href="{{ route('carros.alterar.form') }}" class="btn oficina-btn-dark">Alterar</a>
-                            <a href="{{ route('carros.deletar.form') }}" class="btn oficina-btn-danger">Deletar</a>
-                        </div>
+                        <p class="oficina-text mb-0">Navegue pelas opcoes do sistema usando o menu principal no topo da pagina.</p>
                     </div>
                 </div>
             </div>

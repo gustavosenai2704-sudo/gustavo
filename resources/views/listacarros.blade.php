@@ -1,29 +1,6 @@
 <x-app-layout>
     <div style="background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%); min-height: 100vh; padding: 40px 0;">
         <div class="container">
-            <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
-                <a href="{{ route('carros.salvar.form') }}" class="btn"
-                    style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Cadastrar
-                </a>
-                <a href="{{ route('invoice.create') }}" class="btn"
-                    style="background: linear-gradient(135deg, #212529, #343a40); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Fatura
-                </a>
-                <a href="{{ route('carros.lista') }}" class="btn"
-                    style="background: linear-gradient(135deg, #dc3545, #b02a37); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Historico
-                </a>
-                <a href="{{ route('carros.alterar.form') }}" class="btn"
-                    style="background: linear-gradient(135deg, #ffc107, #e0a800); color: #000; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Alterar
-                </a>
-                <a href="{{ route('carros.deletar.form') }}" class="btn"
-                    style="background: linear-gradient(135deg, #6c757d, #5a6268); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Deletar
-                </a>
-            </div>
-
             <div class="row g-4">
                 <div class="col-lg-3">
                     <div

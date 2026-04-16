@@ -9,8 +9,7 @@
             <span>
                 <small class="d-block text-uppercase"
                     style="color: #ffc107; font-size: 0.7rem; letter-spacing: 2px;">Oficina Especializada</small>
-                <strong class="d-block" style="color: #ffffff; font-size: 1.3rem; font-weight: 700;">Ary Auto
-                    Center</strong>
+                <strong class="d-block" style="color: #ffffff; font-size: 1.3rem; font-weight: 700;">Ary Balanceamento</strong>
             </span>
         </a>
 

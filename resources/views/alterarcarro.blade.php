@@ -1,24 +1,8 @@
 <x-app-layout>
     <div style="background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%); min-height: 100vh; padding: 40px 0;">
         <div class="container">
-            <!-- Botões de ação -->
-            <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
-                <a href="{{ route('carros.salvar.form') }}" class="btn" style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Cadastrar
-                </a>
-                <a href="{{ route('carros.lista') }}" class="btn" style="background: linear-gradient(135deg, #dc3545, #b02a37); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Histórico
-                </a>
-                <a href="{{ route('carros.alterar.form') }}" class="btn" style="background: linear-gradient(135deg, #ffc107, #e0a800); color: #000; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Alterar
-                </a>
-                <a href="{{ route('carros.deletar.form') }}" class="btn" style="background: linear-gradient(135deg, #6c757d, #5a6268); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Deletar
-                </a>
-            </div>
-
             <div class="row g-4">
-                <!-- Formulário de alteração -->
+                <!-- FormulÃ¡rio de alteraÃ§Ã£o -->
                 <div class="col-lg-6">
                     <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
                         @if (session('success'))
@@ -39,7 +23,7 @@
 
                         <div style="margin-bottom: 25px;">
                             <label for="buscar_placa" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                Buscar serviço pela placa
+                                Buscar serviÃ§o pela placa
                             </label>
                             <div class="row g-2 align-items-end">
                                 <div class="col-sm-8">
@@ -60,7 +44,7 @@
 
                             <div class="col-md-6">
                                 <label for="id" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    ID do serviço
+                                    ID do serviÃ§o
                                 </label>
                                 <input id="id" name="id" type="number" class="form-control @error('id') is-invalid @enderror" 
                                     style="background: #e9ecef; color: #666; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
@@ -74,7 +58,7 @@
                                 <label for="placa" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
                                     Placa
                                 </label>
-                                <input id="placa" name="placa" type="text" class="form-control @error('placa') is-invalid @enderror" 
+                                <input id="placa" name="placa" type="text" inputmode="text" class="form-control @error('placa') is-invalid @enderror" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
                                     value="{{ old('placa') }}" required>
                                 @error('placa')
@@ -96,9 +80,9 @@
 
                             <div class="col-md-6">
                                 <label for="preco" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    Preço
+                                    PreÃ§o
                                 </label>
-                                <input id="preco" name="preco" type="number" step="0.01" class="form-control @error('preco') is-invalid @enderror" 
+                                <input id="preco" name="preco" type="text" inputmode="decimal" class="form-control @error('preco') is-invalid @enderror" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
                                     value="{{ old('preco') }}" required>
                                 @error('preco')
@@ -108,7 +92,7 @@
 
                             <div class="col-md-6">
                                 <label for="data_servico" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    Data do serviço
+                                    Data do serviÃ§o
                                 </label>
                                 <input id="data_servico" name="data_servico" type="date" class="form-control @error('data_servico') is-invalid @enderror" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
@@ -120,7 +104,7 @@
 
                             <div class="col-12">
                                 <label for="servico" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    Serviço realizado
+                                    ServiÃ§o realizado
                                 </label>
                                 <textarea id="servico" name="servico" class="form-control @error('servico') is-invalid @enderror" rows="5" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px; resize: vertical;" 
@@ -132,28 +116,28 @@
 
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn" style="background: #ffc107; color: #000; padding: 12px 35px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: all 0.3s;">
-                                    Alterar serviço
+                                    Alterar serviÃ§o
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <!-- Lista de serviços cadastrados -->
+                <!-- Lista de serviÃ§os cadastrados -->
                 <div class="col-lg-6">
                     <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div>
                                 <div style="background: #f8f9fa; display: inline-block; padding: 5px 12px; border-radius: 5px; margin-bottom: 10px;">
-                                    <span style="color: #dc3545; font-size: 0.8rem; font-weight: 600;">CONSULTA RÁPIDA</span>
+                                    <span style="color: #dc3545; font-size: 0.8rem; font-weight: 600;">CONSULTA RÃPIDA</span>
                                 </div>
-                                <h3 style="color: #333; margin: 0; font-weight: 600; font-size: 1.2rem;">Serviços cadastrados</h3>
+                                <h3 style="color: #333; margin: 0; font-weight: 600; font-size: 1.2rem;">ServiÃ§os cadastrados</h3>
                             </div>
                         </div>
 
                         @if ($carros->isEmpty())
                             <div style="text-align: center; padding: 60px 20px; background: #f8f9fa; border-radius: 8px; border: 2px dashed #dee2e6;">
-                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviço cadastrado.</p>
+                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviÃ§o cadastrado.</p>
                             </div>
                         @else
                             <div class="table-responsive" style="overflow-x: auto;">
@@ -164,7 +148,7 @@
                                             <th style="padding: 12px; text-align: left; font-weight: 600; border-right: 1px solid rgba(255,255,255,0.2);">Data</th>
                                             <th style="padding: 12px; text-align: left; font-weight: 600; border-right: 1px solid rgba(255,255,255,0.2);">Placa</th>
                                             <th style="padding: 12px; text-align: left; font-weight: 600; border-right: 1px solid rgba(255,255,255,0.2);">Carro</th>
-                                            <th style="padding: 12px; text-align: left; font-weight: 600;">Ação</th>
+                                            <th style="padding: 12px; text-align: left; font-weight: 600;">AÃ§Ã£o</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -196,6 +180,19 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(function () {
+            const formatarPlaca = function(valor) {
+                const placa = (valor || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 7);
+                if (placa.length <= 3) return placa;
+                return placa.slice(0, 3) + '-' + placa.slice(3);
+            };
+
+            const formatarPreco = function(valor) {
+                const digitos = String(valor ?? '').replace(/\D/g, '');
+                if (digitos === '') return '';
+                const numero = (parseInt(digitos, 10) / 100).toFixed(2);
+                return numero.replace('.', ',');
+            };
+
             function mostrarMensagem(texto, tipo) {
                 const $mensagem = $('#mensagem-busca');
 
@@ -207,9 +204,9 @@
 
             function preencherFormulario(carro) {
                 $('#id').val(carro.id);
-                $('#placa').val(carro.placa);
+                $('#placa').val(formatarPlaca(carro.placa));
                 $('#carro').val(carro.carro);
-                $('#preco').val(carro.preco);
+                $('#preco').val(formatarPreco(carro.preco));
                 $('#data_servico').val(carro.data_servico);
                 $('#servico').val(carro.servico);
             }
@@ -221,11 +218,11 @@
                     data: { placa: placa },
                     success: function (resposta) {
                         preencherFormulario(resposta);
-                        $('#buscar_placa').val(resposta.placa);
-                        mostrarMensagem('Dados do serviço carregados com sucesso.', 'sucesso');
+                        $('#buscar_placa').val(formatarPlaca(resposta.placa));
+                        mostrarMensagem('Dados do serviÃ§o carregados com sucesso.', 'sucesso');
                     },
                     error: function () {
-                        mostrarMensagem('Serviço não encontrado para a placa informada.', 'erro');
+                        mostrarMensagem('ServiÃ§o nÃ£o encontrado para a placa informada.', 'erro');
                     }
                 });
             }
@@ -234,7 +231,7 @@
                 const placa = $('#buscar_placa').val().trim();
 
                 if (!placa) {
-                    mostrarMensagem('Informe a placa para buscar o serviço.', 'erro');
+                    mostrarMensagem('Informe a placa para buscar o serviÃ§o.', 'erro');
                     return;
                 }
 
@@ -243,8 +240,25 @@
 
             $('.buscar-placa').on('click', function () {
                 const placa = $(this).data('placa');
-                $('#buscar_placa').val(placa);
+                $('#buscar_placa').val(formatarPlaca(placa));
                 buscarPorPlaca(placa);
+            });
+
+            $('#buscar_placa, #placa').on('input', function() {
+                $(this).val(formatarPlaca($(this).val()));
+            });
+
+            $('#preco').on('input', function() {
+                $(this).val(formatarPreco($(this).val()));
+            });
+
+            $('#buscar_placa').val(formatarPlaca($('#buscar_placa').val()));
+            $('#placa').val(formatarPlaca($('#placa').val()));
+            $('#preco').val(formatarPreco($('#preco').val()));
+
+            $('#preco').closest('form').on('submit', function() {
+                const valor = $('#preco').val();
+                $('#preco').val(valor.replace('.', '').replace(',', '.'));
             });
         });
     </script>
@@ -258,7 +272,7 @@
             background: #ffffff !important;
         }
 
-        /* Efeitos hover para botões */
+        /* Efeitos hover para botÃµes */
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -270,7 +284,7 @@
             cursor: pointer;
         }
 
-        /* Estilização do placeholder */
+        /* EstilizaÃ§Ã£o do placeholder */
         ::placeholder {
             color: #999 !important;
         }

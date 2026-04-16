@@ -22,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label for="nfse_cpf_cliente" class="form-label">CPF/CNPJ</label>
-                <input id="nfse_cpf_cliente" name="cpf_cliente" type="text" class="form-control" value="{{ old('cpf_cliente', session('nfse_modal.cpf_cliente')) }}" required>
+                <input id="nfse_cpf_cliente" name="cpf_cliente" type="text" inputmode="numeric" class="form-control" value="{{ old('cpf_cliente', session('nfse_modal.cpf_cliente')) }}" required>
             </div>
             <div class="mb-4">
                 <label for="nfse_endereco_cliente" class="form-label">Endereco do cliente</label>

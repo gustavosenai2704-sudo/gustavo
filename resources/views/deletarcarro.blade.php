@@ -1,28 +1,8 @@
 <x-app-layout>
     <div style="background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%); min-height: 100vh; padding: 40px 0;">
         <div class="container">
-            <!-- Botões de ação -->
-            <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
-                <a href="{{ route('carros.salvar.form') }}" class="btn"
-                    style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Cadastrar
-                </a>
-                <a href="{{ route('carros.lista') }}" class="btn"
-                    style="background: linear-gradient(135deg, #dc3545, #b02a37); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Histórico
-                </a>
-                <a href="{{ route('carros.alterar.form') }}" class="btn"
-                    style="background: linear-gradient(135deg, #ffc107, #e0a800); color: #000; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Alterar
-                </a>
-                <a href="{{ route('carros.deletar.form') }}" class="btn"
-                    style="background: linear-gradient(135deg, #6c757d, #5a6268); color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    Deletar
-                </a>
-            </div>
-
             <div class="row g-4">
-                <!-- Formulário de exclusão -->
+                <!-- FormulÃ¡rio de exclusÃ£o -->
                 <div class="col-lg-5">
                     <div
                         style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%; border-top: 4px solid #dc3545;">
@@ -42,13 +22,13 @@
 
                         <div
                             style="background: #f8f9fa; display: inline-block; padding: 5px 12px; border-radius: 5px; margin-bottom: 15px;">
-                            <span style="color: #dc3545; font-weight: 600; font-size: 0.8rem;">ATENÇÃO</span>
+                            <span style="color: #dc3545; font-weight: 600; font-size: 0.8rem;">ATENÃ‡ÃƒO</span>
                         </div>
                         <h3 style="color: #333; margin-bottom: 15px; font-weight: 700; font-size: 1.5rem;">Excluir
                             registro</h3>
                         <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">
-                            Use o ID do serviço para remover o registro do histórico da oficina. Esta ação é
-                            irreversível.
+                            Use o ID do serviÃ§o para remover o registro do histÃ³rico da oficina. Esta aÃ§Ã£o Ã©
+                            irreversÃ­vel.
                         </p>
 
                         <form method="POST" action="{{ route('carros.destroy') }}" class="row g-4">
@@ -58,12 +38,12 @@
                             <div class="col-12">
                                 <label for="id" class="form-label"
                                     style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    ID do serviço
+                                    ID do serviÃ§o
                                 </label>
                                 <input id="id" name="id" type="number"
                                     class="form-control @error('id') is-invalid @enderror"
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 12px 15px;"
-                                    value="{{ old('id') }}" required placeholder="Digite o ID do serviço">
+                                    value="{{ old('id') }}" required placeholder="Digite o ID do serviÃ§o">
                                 @error('id')
                                     <div class="invalid-feedback d-block" style="color: #dc3545;">{{ $message }}</div>
                                 @enderror
@@ -72,14 +52,14 @@
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn"
                                     style="background: #dc3545; color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: all 0.3s;">
-                                    Deletar serviço
+                                    Deletar serviÃ§o
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <!-- Lista de serviços cadastrados -->
+                <!-- Lista de serviÃ§os cadastrados -->
                 <div class="col-lg-7">
                     <div
                         style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
@@ -87,13 +67,13 @@
                             style="background: #f8f9fa; display: inline-block; padding: 5px 12px; border-radius: 5px; margin-bottom: 15px;">
                             <span style="color: #dc3545; font-size: 0.8rem; font-weight: 600;">CONSULTA</span>
                         </div>
-                        <h3 style="color: #333; margin-bottom: 20px; font-weight: 600; font-size: 1.2rem;">Serviços
+                        <h3 style="color: #333; margin-bottom: 20px; font-weight: 600; font-size: 1.2rem;">ServiÃ§os
                             cadastrados</h3>
 
                         @if ($carros->isEmpty())
                             <div
                                 style="text-align: center; padding: 60px 20px; background: #f8f9fa; border-radius: 8px; border: 2px dashed #dee2e6;">
-                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviço cadastrado.</p>
+                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviÃ§o cadastrado.</p>
                             </div>
                         @else
                             <div class="table-responsive" style="overflow-x: auto;">
@@ -136,7 +116,7 @@
                             </div>
                             <div
                                 style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 8px; text-align: center;">
-                                <small style="color: #666;">💡 Clique em qualquer linha para preencher o ID
+                                <small style="color: #666;">ðŸ’¡ Clique em qualquer linha para preencher o ID
                                     automaticamente</small>
                             </div>
                         @endif
@@ -155,7 +135,7 @@
             background: #ffffff !important;
         }
 
-        /* Efeitos hover para botões */
+        /* Efeitos hover para botÃµes */
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -166,7 +146,7 @@
             background-color: #e8e8e8 !important;
         }
 
-        /* Estilização do placeholder */
+        /* EstilizaÃ§Ã£o do placeholder */
         ::placeholder {
             color: #999 !important;
         }
@@ -191,7 +171,7 @@
             background: #b02a37;
         }
 
-        /* Animação de entrada */
+        /* AnimaÃ§Ã£o de entrada */
         tbody tr {
             animation: fadeInUp 0.3s ease-out;
         }
