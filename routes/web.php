@@ -6,7 +6,7 @@ use App\Http\Controllers\CarroController;
 use App\Http\Controllers\InvoiceController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('carros.lista');
 });
 
 Route::get('/dashboard', function () {

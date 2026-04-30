@@ -7,6 +7,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 class CarroController extends Controller
 {
@@ -39,9 +40,11 @@ class CarroController extends Controller
         $ordem = $request->get('ordem', 'recentes');
         $direcao = $ordem === 'antigos' ? 'asc' : 'desc';
 
-        $carros = Carros::orderBy('data_servico', $direcao)
-            ->orderBy('id', $direcao)
-            ->get();
+        $carros = Cache::remember("carros_{$ordem}", 60, function () use ($direcao) {
+            return Carros::orderBy('data_servico', $direcao)
+                ->orderBy('id', $direcao)
+                ->get();
+        });
 
         return view('listacarros', compact('carros', 'ordem'));
     }
@@ -57,6 +60,7 @@ class CarroController extends Controller
         ]);
 
         $carro = Carros::create($dados);
+        $this->limparCacheCarros();
 
         return redirect()
             ->route('carros.salvar.form')
@@ -84,6 +88,7 @@ class CarroController extends Controller
             'servico' => $dados['servico'],
             'data_servico' => $dados['data_servico'],
         ]);
+        $this->limparCacheCarros();
 
         return redirect()
             ->route('carros.alterar.form')
@@ -98,6 +103,7 @@ class CarroController extends Controller
 
         $carro = Carros::findOrFail($dados['id']);
         $carro->delete();
+        $this->limparCacheCarros();
 
         return redirect()
             ->route('carros.deletar.form')
@@ -236,5 +242,11 @@ class CarroController extends Controller
     private function gerarCodigoVerificacao(): string
     {
         return strtoupper(Str::random(10));
+    }
+
+    private function limparCacheCarros(): void
+    {
+        Cache::forget('carros_recentes');
+        Cache::forget('carros_antigos');
     }
 }
