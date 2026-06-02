@@ -2,7 +2,7 @@
     <div style="background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%); min-height: 100vh; padding: 40px 0;">
         <div class="container">
             <div class="row g-4">
-                <!-- FormulÃ¡rio de alteraÃ§Ã£o -->
+                <!-- Formulário de alteração -->
                 <div class="col-lg-6">
                     <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
                         @if (session('success'))
@@ -23,7 +23,7 @@
 
                         <div style="margin-bottom: 25px;">
                             <label for="buscar_placa" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                Buscar serviÃ§o pela placa
+                                Buscar serviço pela placa
                             </label>
                             <div class="row g-2 align-items-end">
                                 <div class="col-sm-8">
@@ -44,7 +44,7 @@
 
                             <div class="col-md-6">
                                 <label for="id" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    ID do serviÃ§o
+                                    ID do serviço
                                 </label>
                                 <input id="id" name="id" type="number" class="form-control @error('id') is-invalid @enderror" 
                                     style="background: #e9ecef; color: #666; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
@@ -80,7 +80,7 @@
 
                             <div class="col-md-6">
                                 <label for="preco" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    PreÃ§o
+                                    Preço
                                 </label>
                                 <input id="preco" name="preco" type="text" inputmode="decimal" class="form-control @error('preco') is-invalid @enderror" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
@@ -92,7 +92,7 @@
 
                             <div class="col-md-6">
                                 <label for="data_servico" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    Data do serviÃ§o
+                                    Data do serviço
                                 </label>
                                 <input id="data_servico" name="data_servico" type="date" class="form-control @error('data_servico') is-invalid @enderror" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px;" 
@@ -104,7 +104,7 @@
 
                             <div class="col-12">
                                 <label for="servico" class="form-label" style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    ServiÃ§o realizado
+                                    Serviço realizado
                                 </label>
                                 <textarea id="servico" name="servico" class="form-control @error('servico') is-invalid @enderror" rows="5" 
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 10px 15px; resize: vertical;" 
@@ -116,28 +116,28 @@
 
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn" style="background: #ffc107; color: #000; padding: 12px 35px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: all 0.3s;">
-                                    Alterar serviÃ§o
+                                    Alterar serviço
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <!-- Lista de serviÃ§os cadastrados -->
+                <!-- Lista de serviços cadastrados -->
                 <div class="col-lg-6">
                     <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div>
                                 <div style="background: #f8f9fa; display: inline-block; padding: 5px 12px; border-radius: 5px; margin-bottom: 10px;">
-                                    <span style="color: #dc3545; font-size: 0.8rem; font-weight: 600;">CONSULTA RÃPIDA</span>
+                                    <span style="color: #dc3545; font-size: 0.8rem; font-weight: 600;">CONSULTA RÁPIDA</span>
                                 </div>
-                                <h3 style="color: #333; margin: 0; font-weight: 600; font-size: 1.2rem;">ServiÃ§os cadastrados</h3>
+                                <h3 style="color: #333; margin: 0; font-weight: 600; font-size: 1.2rem;">Serviços cadastrados</h3>
                             </div>
                         </div>
 
                         @if ($carros->isEmpty())
                             <div style="text-align: center; padding: 60px 20px; background: #f8f9fa; border-radius: 8px; border: 2px dashed #dee2e6;">
-                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviÃ§o cadastrado.</p>
+                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviço cadastrado.</p>
                             </div>
                         @else
                             <div class="table-responsive" style="overflow-x: auto;">
@@ -148,7 +148,7 @@
                                             <th style="padding: 12px; text-align: left; font-weight: 600; border-right: 1px solid rgba(255,255,255,0.2);">Data</th>
                                             <th style="padding: 12px; text-align: left; font-weight: 600; border-right: 1px solid rgba(255,255,255,0.2);">Placa</th>
                                             <th style="padding: 12px; text-align: left; font-weight: 600; border-right: 1px solid rgba(255,255,255,0.2);">Carro</th>
-                                            <th style="padding: 12px; text-align: left; font-weight: 600;">AÃ§Ã£o</th>
+                                            <th style="padding: 12px; text-align: left; font-weight: 600;">Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -219,10 +219,10 @@
                     success: function (resposta) {
                         preencherFormulario(resposta);
                         $('#buscar_placa').val(formatarPlaca(resposta.placa));
-                        mostrarMensagem('Dados do serviÃ§o carregados com sucesso.', 'sucesso');
+                        mostrarMensagem('Dados do serviço carregados com sucesso.', 'sucesso');
                     },
                     error: function () {
-                        mostrarMensagem('ServiÃ§o nÃ£o encontrado para a placa informada.', 'erro');
+                        mostrarMensagem('Serviço não encontrado para a placa informada.', 'erro');
                     }
                 });
             }
@@ -231,7 +231,7 @@
                 const placa = $('#buscar_placa').val().trim();
 
                 if (!placa) {
-                    mostrarMensagem('Informe a placa para buscar o serviÃ§o.', 'erro');
+                    mostrarMensagem('Informe a placa para buscar o serviço.', 'erro');
                     return;
                 }
 

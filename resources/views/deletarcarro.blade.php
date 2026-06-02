@@ -22,13 +22,13 @@
 
                         <div
                             style="background: #f8f9fa; display: inline-block; padding: 5px 12px; border-radius: 5px; margin-bottom: 15px;">
-                            <span style="color: #dc3545; font-weight: 600; font-size: 0.8rem;">ATENÃ‡ÃƒO</span>
+                            <span style="color: #dc3545; font-weight: 600; font-size: 0.8rem;">ATENÇÃO</span>
                         </div>
                         <h3 style="color: #333; margin-bottom: 15px; font-weight: 700; font-size: 1.5rem;">Excluir
                             registro</h3>
                         <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">
-                            Use o ID do serviÃ§o para remover o registro do histÃ³rico da oficina. Esta aÃ§Ã£o Ã©
-                            irreversÃ­vel.
+                            Use o ID do serviço para remover o registro do histórico da oficina. Esta ação é
+                            irreversível.
                         </p>
 
                         <form method="POST" action="{{ route('carros.destroy') }}" class="row g-4">
@@ -38,12 +38,12 @@
                             <div class="col-12">
                                 <label for="id" class="form-label"
                                     style="color: #333; font-weight: 600; margin-bottom: 8px;">
-                                    ID do serviÃ§o
+                                    ID do serviço
                                 </label>
                                 <input id="id" name="id" type="number"
                                     class="form-control @error('id') is-invalid @enderror"
                                     style="background: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 8px; padding: 12px 15px;"
-                                    value="{{ old('id') }}" required placeholder="Digite o ID do serviÃ§o">
+                                    value="{{ old('id') }}" required placeholder="Digite o ID do serviço">
                                 @error('id')
                                     <div class="invalid-feedback d-block" style="color: #dc3545;">{{ $message }}</div>
                                 @enderror
@@ -52,14 +52,14 @@
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn"
                                     style="background: #dc3545; color: #fff; padding: 12px 35px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: all 0.3s;">
-                                    Deletar serviÃ§o
+                                    Deletar serviço
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <!-- Lista de serviÃ§os cadastrados -->
+                <!-- Lista de serviços cadastrados -->
                 <div class="col-lg-7">
                     <div
                         style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
@@ -67,13 +67,13 @@
                             style="background: #f8f9fa; display: inline-block; padding: 5px 12px; border-radius: 5px; margin-bottom: 15px;">
                             <span style="color: #dc3545; font-size: 0.8rem; font-weight: 600;">CONSULTA</span>
                         </div>
-                        <h3 style="color: #333; margin-bottom: 20px; font-weight: 600; font-size: 1.2rem;">ServiÃ§os
+                        <h3 style="color: #333; margin-bottom: 20px; font-weight: 600; font-size: 1.2rem;">Serviços
                             cadastrados</h3>
 
                         @if ($carros->isEmpty())
                             <div
                                 style="text-align: center; padding: 60px 20px; background: #f8f9fa; border-radius: 8px; border: 2px dashed #dee2e6;">
-                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviÃ§o cadastrado.</p>
+                                <p style="color: #666; font-size: 1rem; margin: 0;">Nenhum serviço cadastrado.</p>
                             </div>
                         @else
                             <div class="table-responsive" style="overflow-x: auto;">

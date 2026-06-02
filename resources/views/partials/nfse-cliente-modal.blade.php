@@ -17,15 +17,15 @@
         <form id="nfse-modal-form" method="POST" action="" style="padding: 24px;">
             @csrf
             <div class="mb-3">
-                <label for="nfse_nome_cliente" class="form-label">Nome do cliente</label>
+                <label for="nfse_nome_cliente" class="form-label" style="color:#333">Nome do cliente</label>
                 <input id="nfse_nome_cliente" name="nome_cliente" type="text" class="form-control" value="{{ old('nome_cliente', session('nfse_modal.nome_cliente')) }}" required>
             </div>
             <div class="mb-3">
-                <label for="nfse_cpf_cliente" class="form-label">CPF/CNPJ</label>
+                <label for="nfse_cpf_cliente" class="form-label" style="color:#333">CPF/CNPJ</label>
                 <input id="nfse_cpf_cliente" name="cpf_cliente" type="text" inputmode="numeric" class="form-control" value="{{ old('cpf_cliente', session('nfse_modal.cpf_cliente')) }}" required>
             </div>
             <div class="mb-4">
-                <label for="nfse_endereco_cliente" class="form-label">Endereco do cliente</label>
+                <label for="nfse_endereco_cliente" class="form-label" style="color:#333">Endereco do cliente</label>
                 <input id="nfse_endereco_cliente" name="endereco_cliente" type="text" class="form-control" value="{{ old('endereco_cliente', session('nfse_modal.endereco_cliente')) }}" required>
             </div>
             <div class="d-flex gap-2 justify-content-end">
